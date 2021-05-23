@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Import;
  * Date: 2021/5/18 下午2:01
  * Desc: 配置类
  */
-@Configuration(proxyBeanMethods = true)  // 告诉SpringBoot这是一个配置类,用于替代xml配置文件
+@Configuration()  // 告诉SpringBoot这是一个配置类,用于替代xml配置文件
 @Import({User.class, DBHelper.class})
 @EnableConfigurationProperties(Car.class)  // 将组件自动注册到容器中
 public class MyConfig {
@@ -39,6 +39,6 @@ public class MyConfig {
 
     @Bean
     public Pet pet() {
-        return new Pet("tom");
+        return new Pet("tom", 10.0);
     }
 }
